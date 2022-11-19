@@ -40,7 +40,11 @@ struct FXTimeSeriesAPIResponse: Codable {
             }
         }
         
-        rates = timeSeriesRates
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        rates = timeSeriesRates.sorted { rate1, rate2 in
+            return dateFormatter.date(from: rate1.date)! > dateFormatter.date(from: rate2.date)!
+        }
     }
 }
 
@@ -71,5 +75,16 @@ struct FXTimeSeriesRates: Codable {
    "start_date": "2022-11-15",
    "success": true,
    "timeseries": true
+ }
+ */
+
+/**
+ {
+     error =     {
+         code = 504;
+         info = "You have entered an invalid Time-Frame. [Required format: ...&start_date=YYYY-MM-DD&end_date=YYYY-MM-DD]";
+         type = "invalid_time_frame";
+     };
+     success = 0;
  }
  */

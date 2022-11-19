@@ -8,14 +8,6 @@
 import Foundation
 
 class ConvertViewModel {
-    
-    enum ConversionStatus {
-        case initiated
-        case completed
-        case failed
-    }
-    typealias ConversionResult = (ConversionStatus, Error?) -> Void
-    
     var baseCurrency: String?
     var targetCurrency: String?
     var baseAmount: Float {
@@ -27,7 +19,7 @@ class ConvertViewModel {
     }
     var targetAmount: Float
 
-    var currencyConversionUpdateBlock: ConversionResult?
+    var fetchStatusBlock: FetchStatusBlock?
     
     private var currencySymbolsList: [FXCurrencySymbol] = []
     var currenciesList: [String] {
@@ -52,16 +44,16 @@ class ConvertViewModel {
               let targetCurrency = targetCurrency,
               baseAmount > 0 else {return}
 
-        currencyConversionUpdateBlock?(.initiated, nil)
+        fetchStatusBlock?(.initiated, nil)
         Task {
             do {
                 let amount = try await convertAmount(baseCurrency: baseCurrency,
                                         targetCurrency: targetCurrency, baseAmount: baseAmount)
                 self.targetAmount = amount
-                currencyConversionUpdateBlock?(.completed, nil)
+                fetchStatusBlock?(.completed, nil)
             }
             catch let error {
-                currencyConversionUpdateBlock?(.failed, error)
+                fetchStatusBlock?(.failed, error)
             }
         }
     }
@@ -72,7 +64,9 @@ class ConvertViewModel {
                 let result = try await CurrencyDataStore.shared.getSymbols()
               currencySymbolsList = result.symbols
             } catch {
-                print("loadCurrenciesList error: \(error)")
+                if FeatureFlags.logsEnabled {
+                    print("loadCurrenciesList error: \(error)")
+                }
             }
         }
     }

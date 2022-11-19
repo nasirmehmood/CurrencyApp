@@ -34,7 +34,10 @@ class AppCoordinator {
 }
 
 extension AppCoordinator: ConverterViewControllerDelegate {
-    func converterViewController(_ controller: ConverterViewController, wantsToLoadDetailFor base: String, target: String, amount: Float) {
-        
+    func converterViewController(_ controller: ConverterViewController, wantsToLoadDetailFor baseCurrency: String, targetCurrency: String) {
+        let controller: HistoricViewController = storyboard.instantiateViewController(withIdentifier: HistoricViewController.identifier) as! HistoricViewController
+        controller.baseCurrency = baseCurrency
+        controller.targetCurrency = targetCurrency
+        (rootViewController as! UINavigationController).pushViewController(controller, animated: true)
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 import DropDown
 
 protocol ConverterViewControllerDelegate: AnyObject {
-    func converterViewController(_ controller: ConverterViewController, wantsToLoadDetailFor base: String, target: String, amount: Float)
+    func converterViewController(_ controller: ConverterViewController, wantsToLoadDetailFor baseCurrency: String, targetCurrency: String)
 }
 
 class ConverterViewController: UIViewController {
@@ -94,7 +94,7 @@ class ConverterViewController: UIViewController {
             let baseAmount = viewModel.baseAmount
             delegate.converterViewController(self,
                                              wantsToLoadDetailFor: baseCurrency,
-                                             target: targetCurrency, amount: baseAmount)
+                                             targetCurrency: targetCurrency)
         }
     }
     
@@ -119,7 +119,7 @@ extension ConverterViewController {
 
 extension ConverterViewController {
     func subscribeCurrencyConversionUpdates() {
-        viewModel.currencyConversionUpdateBlock = {[weak self] status, error in
+        viewModel.fetchStatusBlock = {[weak self] status, error in
             guard let weakSelf = self else {return}
             DispatchQueue.main.async {
                 switch status {
@@ -155,7 +155,7 @@ extension ConverterViewController {
             
             DispatchQueue.main.async {
                 self.updateUI()
-                self.viewModel.performConversion()s
+                self.viewModel.performConversion()
             }
         }
     }

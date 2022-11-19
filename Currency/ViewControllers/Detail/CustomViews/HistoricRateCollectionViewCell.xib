@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HistoricRateCollectionViewCell" customModule="Currency" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="145" height="55"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="145" height="55"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022-11-19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bg2-sb-YSy">
+                        <rect key="frame" x="8" y="8" width="60.5" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="60.421128" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dK0-Zh-rBf">
+                        <rect key="frame" x="45" y="23.5" width="92" height="22"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PKR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlR-YF-W97">
+                        <rect key="frame" x="8" y="25.5" width="29" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" name="AccentColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="dlR-YF-W97" firstAttribute="top" secondItem="Bg2-sb-YSy" secondAttribute="bottom" constant="4" id="1Iu-2V-hRd"/>
+                <constraint firstItem="Bg2-sb-YSy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="Ogj-rE-rtj"/>
+                <constraint firstItem="Bg2-sb-YSy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Qim-0m-9LG"/>
+                <constraint firstItem="dlR-YF-W97" firstAttribute="leading" secondItem="Bg2-sb-YSy" secondAttribute="leading" id="U2m-8J-ebh"/>
+                <constraint firstItem="dK0-Zh-rBf" firstAttribute="centerY" secondItem="dlR-YF-W97" secondAttribute="centerY" id="W6T-um-KH2"/>
+                <constraint firstItem="dK0-Zh-rBf" firstAttribute="leading" secondItem="dlR-YF-W97" secondAttribute="trailing" constant="8" id="Xu8-el-2Vh"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dK0-Zh-rBf" secondAttribute="trailing" constant="8" id="rot-PK-i9r"/>
+            </constraints>
+            <size key="customSize" width="159" height="79"/>
+            <connections>
+                <outlet property="dateLabel" destination="Bg2-sb-YSy" id="g2T-hk-fqI"/>
+                <outlet property="rateLabel" destination="dK0-Zh-rBf" id="NeL-tl-bou"/>
+                <outlet property="symbolLabel" destination="dlR-YF-W97" id="Eoi-nT-qHG"/>
+            </connections>
+            <point key="canvasLocation" x="216.66666666666669" y="109.48660714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.26666666666666666" green="0.59607843137254901" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
