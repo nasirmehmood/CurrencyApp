@@ -9,21 +9,53 @@
 /* Begin PBXBuildFile section */
 		A054B5792927C47B0020F534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5782927C47B0020F534 /* AppDelegate.swift */; };
 		A054B57B2927C47B0020F534 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B57A2927C47B0020F534 /* SceneDelegate.swift */; };
-		A054B57D2927C47B0020F534 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B57C2927C47B0020F534 /* ViewController.swift */; };
+		A054B57D2927C47B0020F534 /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B57C2927C47B0020F534 /* ConverterViewController.swift */; };
 		A054B5802927C47B0020F534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A054B57E2927C47B0020F534 /* Main.storyboard */; };
 		A054B5822927C47C0020F534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A054B5812927C47C0020F534 /* Assets.xcassets */; };
 		A054B5852927C47C0020F534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A054B5832927C47C0020F534 /* LaunchScreen.storyboard */; };
+		A054B58E2927C5040020F534 /* ServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B58D2927C5040020F534 /* ServicesManager.swift */; };
+		A054B5912927C7020020F534 /* CurrencyDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5902927C7020020F534 /* CurrencyDataStore.swift */; };
+		A054B5942927D14D0020F534 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5932927D14D0020F534 /* APIEndpoints.swift */; };
+		A054B5962927D3E50020F534 /* FXConvertAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5952927D3E50020F534 /* FXConvertAPIResponse.swift */; };
+		A054B5982927D57A0020F534 /* FXTimeSeriesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5972927D57A0020F534 /* FXTimeSeriesAPIResponse.swift */; };
+		A054B59A2927FA800020F534 /* FXSymbolsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5992927FA800020F534 /* FXSymbolsAPIResponse.swift */; };
+		A054B59C2927FCCE0020F534 /* FXLatestAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B59B2927FCCE0020F534 /* FXLatestAPIResponse.swift */; };
+		A054B5A12928080C0020F534 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5A02928080C0020F534 /* EncodableExtension.swift */; };
+		A054B5A4292808AD0020F534 /* FXConvertAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5A3292808AD0020F534 /* FXConvertAPIRequest.swift */; };
+		A054B5A6292809250020F534 /* FXLatestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5A5292809250020F534 /* FXLatestAPIRequest.swift */; };
+		A054B5A829280AFC0020F534 /* FXTimeSeriesAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5A729280AFC0020F534 /* FXTimeSeriesAPIRequest.swift */; };
+		A054B5AC29281AC10020F534 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A054B5AB29281AC10020F534 /* IQKeyboardManagerSwift */; };
+		A054B5AF29281B120020F534 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5AE29281B120020F534 /* AppCoordinator.swift */; };
+		A054B5B32928FB540020F534 /* ConvertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5B22928FB540020F534 /* ConvertViewModel.swift */; };
+		A054B5B6292914740020F534 /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = A054B5B5292914740020F534 /* DropDown */; };
+		A054B5B829291E590020F534 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5B729291E590020F534 /* Constants.swift */; };
+		A054B5BE292922440020F534 /* UserDefaultPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5BD292922440020F534 /* UserDefaultPropertyWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A054B5752927C47B0020F534 /* Currency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A054B5782927C47B0020F534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A054B57A2927C47B0020F534 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A054B57C2927C47B0020F534 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A054B57C2927C47B0020F534 /* ConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
 		A054B57F2927C47B0020F534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A054B5812927C47C0020F534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A054B5842927C47C0020F534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A054B5862927C47C0020F534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A054B58D2927C5040020F534 /* ServicesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesManager.swift; sourceTree = "<group>"; };
+		A054B5902927C7020020F534 /* CurrencyDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDataStore.swift; sourceTree = "<group>"; };
+		A054B5932927D14D0020F534 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		A054B5952927D3E50020F534 /* FXConvertAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXConvertAPIResponse.swift; sourceTree = "<group>"; };
+		A054B5972927D57A0020F534 /* FXTimeSeriesAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTimeSeriesAPIResponse.swift; sourceTree = "<group>"; };
+		A054B5992927FA800020F534 /* FXSymbolsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXSymbolsAPIResponse.swift; sourceTree = "<group>"; };
+		A054B59B2927FCCE0020F534 /* FXLatestAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXLatestAPIResponse.swift; sourceTree = "<group>"; };
+		A054B5A02928080C0020F534 /* EncodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
+		A054B5A3292808AD0020F534 /* FXConvertAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXConvertAPIRequest.swift; sourceTree = "<group>"; };
+		A054B5A5292809250020F534 /* FXLatestAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXLatestAPIRequest.swift; sourceTree = "<group>"; };
+		A054B5A729280AFC0020F534 /* FXTimeSeriesAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTimeSeriesAPIRequest.swift; sourceTree = "<group>"; };
+		A054B5AE29281B120020F534 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		A054B5B22928FB540020F534 /* ConvertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewModel.swift; sourceTree = "<group>"; };
+		A054B5B729291E590020F534 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A054B5BD292922440020F534 /* UserDefaultPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultPropertyWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A054B5AC29281AC10020F534 /* IQKeyboardManagerSwift in Frameworks */,
+				A054B5B6292914740020F534 /* DropDown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +90,118 @@
 		A054B5772927C47B0020F534 /* Currency */ = {
 			isa = PBXGroup;
 			children = (
+				A054B5BC292922330020F534 /* Utils */,
+				A054B5B02928FB3D0020F534 /* ViewControllers */,
+				A054B5AD29281B000020F534 /* Coordinators */,
+				A054B5922927CACA0020F534 /* Models */,
+				A054B58F2927C6F50020F534 /* DataStores */,
+				A054B58C2927C4F60020F534 /* DataHandlers */,
 				A054B5782927C47B0020F534 /* AppDelegate.swift */,
 				A054B57A2927C47B0020F534 /* SceneDelegate.swift */,
-				A054B57C2927C47B0020F534 /* ViewController.swift */,
+				A054B5B729291E590020F534 /* Constants.swift */,
 				A054B57E2927C47B0020F534 /* Main.storyboard */,
 				A054B5812927C47C0020F534 /* Assets.xcassets */,
 				A054B5832927C47C0020F534 /* LaunchScreen.storyboard */,
 				A054B5862927C47C0020F534 /* Info.plist */,
 			);
 			path = Currency;
+			sourceTree = "<group>";
+		};
+		A054B58C2927C4F60020F534 /* DataHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				A054B5A929280C2A0020F534 /* Network */,
+			);
+			path = DataHandlers;
+			sourceTree = "<group>";
+		};
+		A054B58F2927C6F50020F534 /* DataStores */ = {
+			isa = PBXGroup;
+			children = (
+				A054B5902927C7020020F534 /* CurrencyDataStore.swift */,
+			);
+			path = DataStores;
+			sourceTree = "<group>";
+		};
+		A054B5922927CACA0020F534 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A054B5A22928089A0020F534 /* APIRequest */,
+				A054B59E292806CE0020F534 /* APIResponse */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A054B59D292806BE0020F534 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A054B5A02928080C0020F534 /* EncodableExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A054B59E292806CE0020F534 /* APIResponse */ = {
+			isa = PBXGroup;
+			children = (
+				A054B5952927D3E50020F534 /* FXConvertAPIResponse.swift */,
+				A054B5972927D57A0020F534 /* FXTimeSeriesAPIResponse.swift */,
+				A054B5992927FA800020F534 /* FXSymbolsAPIResponse.swift */,
+				A054B59B2927FCCE0020F534 /* FXLatestAPIResponse.swift */,
+			);
+			path = APIResponse;
+			sourceTree = "<group>";
+		};
+		A054B5A22928089A0020F534 /* APIRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A054B5A3292808AD0020F534 /* FXConvertAPIRequest.swift */,
+				A054B5A5292809250020F534 /* FXLatestAPIRequest.swift */,
+				A054B5A729280AFC0020F534 /* FXTimeSeriesAPIRequest.swift */,
+			);
+			path = APIRequest;
+			sourceTree = "<group>";
+		};
+		A054B5A929280C2A0020F534 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A054B5932927D14D0020F534 /* APIEndpoints.swift */,
+				A054B58D2927C5040020F534 /* ServicesManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A054B5AD29281B000020F534 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				A054B5AE29281B120020F534 /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		A054B5B02928FB3D0020F534 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A054B5B12928FB420020F534 /* Converter */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A054B5B12928FB420020F534 /* Converter */ = {
+			isa = PBXGroup;
+			children = (
+				A054B57C2927C47B0020F534 /* ConverterViewController.swift */,
+				A054B5B22928FB540020F534 /* ConvertViewModel.swift */,
+			);
+			path = Converter;
+			sourceTree = "<group>";
+		};
+		A054B5BC292922330020F534 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A054B59D292806BE0020F534 /* Extensions */,
+				A054B5BD292922440020F534 /* UserDefaultPropertyWrapper.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +220,10 @@
 			dependencies = (
 			);
 			name = Currency;
+			packageProductDependencies = (
+				A054B5AB29281AC10020F534 /* IQKeyboardManagerSwift */,
+				A054B5B5292914740020F534 /* DropDown */,
+			);
 			productName = Currency;
 			productReference = A054B5752927C47B0020F534 /* Currency.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +252,10 @@
 				Base,
 			);
 			mainGroup = A054B56C2927C47B0020F534;
+			packageReferences = (
+				A054B5AA29281AC10020F534 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				A054B5B4292914740020F534 /* XCRemoteSwiftPackageReference "DropDown" */,
+			);
 			productRefGroup = A054B5762927C47B0020F534 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +283,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A054B57D2927C47B0020F534 /* ViewController.swift in Sources */,
+				A054B5A829280AFC0020F534 /* FXTimeSeriesAPIRequest.swift in Sources */,
+				A054B5B829291E590020F534 /* Constants.swift in Sources */,
+				A054B5962927D3E50020F534 /* FXConvertAPIResponse.swift in Sources */,
+				A054B5982927D57A0020F534 /* FXTimeSeriesAPIResponse.swift in Sources */,
+				A054B5BE292922440020F534 /* UserDefaultPropertyWrapper.swift in Sources */,
+				A054B59A2927FA800020F534 /* FXSymbolsAPIResponse.swift in Sources */,
+				A054B5A6292809250020F534 /* FXLatestAPIRequest.swift in Sources */,
+				A054B57D2927C47B0020F534 /* ConverterViewController.swift in Sources */,
+				A054B59C2927FCCE0020F534 /* FXLatestAPIResponse.swift in Sources */,
+				A054B5912927C7020020F534 /* CurrencyDataStore.swift in Sources */,
+				A054B5A4292808AD0020F534 /* FXConvertAPIRequest.swift in Sources */,
 				A054B5792927C47B0020F534 /* AppDelegate.swift in Sources */,
+				A054B5942927D14D0020F534 /* APIEndpoints.swift in Sources */,
 				A054B57B2927C47B0020F534 /* SceneDelegate.swift in Sources */,
+				A054B5AF29281B120020F534 /* AppCoordinator.swift in Sources */,
+				A054B58E2927C5040020F534 /* ServicesManager.swift in Sources */,
+				A054B5B32928FB540020F534 /* ConvertViewModel.swift in Sources */,
+				A054B5A12928080C0020F534 /* EncodableExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +520,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A054B5AA29281AC10020F534 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
+		A054B5B4292914740020F534 /* XCRemoteSwiftPackageReference "DropDown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AssistoLab/DropDown.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A054B5AB29281AC10020F534 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A054B5AA29281AC10020F534 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		A054B5B5292914740020F534 /* DropDown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A054B5B4292914740020F534 /* XCRemoteSwiftPackageReference "DropDown" */;
+			productName = DropDown;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A054B56D2927C47B0020F534 /* Project object */;
 }
