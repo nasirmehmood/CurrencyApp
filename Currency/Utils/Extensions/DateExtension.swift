@@ -31,4 +31,20 @@ extension Date {
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
+    
+    var dateMonthFormatted: String {
+        let format: String = "dd MMM"
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
+}
+
+extension String {
+    var defaultFormatDate: Date {
+        let format: String = "yyyy-MM-dd"
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.date(from: self)!
+    }
 }

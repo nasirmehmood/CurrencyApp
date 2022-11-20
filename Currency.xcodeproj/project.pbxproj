@@ -36,6 +36,9 @@
 		A054B5C8292962480020F534 /* HistoricViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5C7292962480020F534 /* HistoricViewModel.swift */; };
 		A054B5CA2929646E0020F534 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5C92929646E0020F534 /* DateExtension.swift */; };
 		A054B5CC2929692A0020F534 /* FetchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5CB2929692A0020F534 /* FetchStatus.swift */; };
+		A054B5CF292970320020F534 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = A054B5CE292970320020F534 /* Charts */; };
+		A054B5D22929704E0020F534 /* HistoricLineChartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054B5D02929704E0020F534 /* HistoricLineChartCollectionViewCell.swift */; };
+		A054B5D32929704E0020F534 /* HistoricLineChartCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A054B5D12929704E0020F534 /* HistoricLineChartCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,8 @@
 		A054B5C7292962480020F534 /* HistoricViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricViewModel.swift; sourceTree = "<group>"; };
 		A054B5C92929646E0020F534 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		A054B5CB2929692A0020F534 /* FetchStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchStatus.swift; sourceTree = "<group>"; };
+		A054B5D02929704E0020F534 /* HistoricLineChartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricLineChartCollectionViewCell.swift; sourceTree = "<group>"; };
+		A054B5D12929704E0020F534 /* HistoricLineChartCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoricLineChartCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A054B5AC29281AC10020F534 /* IQKeyboardManagerSwift in Frameworks */,
+				A054B5CF292970320020F534 /* Charts in Frameworks */,
 				A054B5B6292914740020F534 /* DropDown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +240,8 @@
 			children = (
 				A054B5C12929549C0020F534 /* HistoricRateCollectionViewCell.swift */,
 				A054B5C22929549C0020F534 /* HistoricRateCollectionViewCell.xib */,
+				A054B5D02929704E0020F534 /* HistoricLineChartCollectionViewCell.swift */,
+				A054B5D12929704E0020F534 /* HistoricLineChartCollectionViewCell.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -257,6 +265,7 @@
 			packageProductDependencies = (
 				A054B5AB29281AC10020F534 /* IQKeyboardManagerSwift */,
 				A054B5B5292914740020F534 /* DropDown */,
+				A054B5CE292970320020F534 /* Charts */,
 			);
 			productName = Currency;
 			productReference = A054B5752927C47B0020F534 /* Currency.app */;
@@ -289,6 +298,7 @@
 			packageReferences = (
 				A054B5AA29281AC10020F534 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				A054B5B4292914740020F534 /* XCRemoteSwiftPackageReference "DropDown" */,
+				A054B5CD292970320020F534 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = A054B5762927C47B0020F534 /* Products */;
 			projectDirPath = "";
@@ -304,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A054B5D32929704E0020F534 /* HistoricLineChartCollectionViewCell.xib in Resources */,
 				A054B5852927C47C0020F534 /* LaunchScreen.storyboard in Resources */,
 				A054B5822927C47C0020F534 /* Assets.xcassets in Resources */,
 				A054B5802927C47B0020F534 /* Main.storyboard in Resources */,
@@ -320,6 +331,7 @@
 			files = (
 				A054B5CC2929692A0020F534 /* FetchStatus.swift in Sources */,
 				A054B5A829280AFC0020F534 /* FXTimeSeriesAPIRequest.swift in Sources */,
+				A054B5D22929704E0020F534 /* HistoricLineChartCollectionViewCell.swift in Sources */,
 				A054B5C8292962480020F534 /* HistoricViewModel.swift in Sources */,
 				A054B5B829291E590020F534 /* Constants.swift in Sources */,
 				A054B5962927D3E50020F534 /* FXConvertAPIResponse.swift in Sources */,
@@ -580,6 +592,14 @@
 				kind = branch;
 			};
 		};
+		A054B5CD292970320020F534 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -592,6 +612,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A054B5B4292914740020F534 /* XCRemoteSwiftPackageReference "DropDown" */;
 			productName = DropDown;
+		};
+		A054B5CE292970320020F534 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A054B5CD292970320020F534 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

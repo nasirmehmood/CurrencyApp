@@ -18,8 +18,8 @@ class HistoricViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentCollectionView.register(UINib(nibName: "HistoricRateCollectionViewCell", bundle: nil),
-                                       forCellWithReuseIdentifier: "HistoricRateCollectionViewCell")
+        contentCollectionView.register(UINib(nibName: "HistoricRateCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HistoricRateCollectionViewCell")
+        contentCollectionView.register(UINib(nibName: "HistoricLineChartCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HistoricLineChartCollectionViewCell")
 
         viewModel = HistoricViewModel(baseCurrency: baseCurrency, targetCurrency: targetCurrency)
         subscribeFetchUpdates()
@@ -43,17 +43,30 @@ class HistoricViewController: UIViewController {
 }
 
 extension HistoricViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return HistoricViewModel.Sections.allCases.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfItems
+        return viewModel.numberOfItems(section: section)
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HistoricRateCollectionViewCell",
-                                                      for: indexPath) as! HistoricRateCollectionViewCell
-        cell.set(info: viewModel.itemInfo(for: indexPath.item))
-        return cell
+        let section = HistoricViewModel.Sections(rawValue: indexPath.section)!
+        switch section {
+        case .chart:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HistoricLineChartCollectionViewCell",
+                                                          for: indexPath) as! HistoricLineChartCollectionViewCell
+            cell.updateChart(values: viewModel.chartValues, labels: viewModel.chartLabels)
+            return cell
+        case .historyList:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HistoricRateCollectionViewCell",
+                                                          for: indexPath) as! HistoricRateCollectionViewCell
+            cell.set(info: viewModel.itemInfo(for: indexPath))
+            return cell
+        }
     }
 }
 
@@ -61,8 +74,15 @@ extension HistoricViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.size.width,
-                      height: HistoricRateCollectionViewCell.defaultSize.height)
+        let section = HistoricViewModel.Sections(rawValue: indexPath.section)!
+        switch section {
+            
+        case .chart:
+            return CGSize(width: collectionView.bounds.size.width - 30, height: collectionView.bounds.size.height * 0.35)
+        case .historyList:
+            return CGSize(width: collectionView.bounds.size.width - 30,
+                          height: HistoricRateCollectionViewCell.defaultSize.height)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -80,7 +100,7 @@ extension HistoricViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .zero
+        return UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
     }
 }
 

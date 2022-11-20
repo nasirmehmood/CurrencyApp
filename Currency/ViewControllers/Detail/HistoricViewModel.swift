@@ -9,6 +9,11 @@ import Foundation
 
 class HistoricViewModel {
     
+    enum Sections: Int, CaseIterable {
+        case chart = 0
+        case historyList
+    }
+    
     var baseCurrency: String
     var targetCurrency: String
     
@@ -41,12 +46,28 @@ class HistoricViewModel {
         }
     }
     
-    var numberOfItems: Int {
-        return historicRates.count
+    func numberOfItems(section: Int) -> Int {
+        let section = Sections(rawValue: section)!
+        switch section {
+        case .chart:
+            return 1
+        case .historyList:
+            return historicRates.count
+        }
     }
     
-    func itemInfo(for index: Int) -> HistoricRateInfo {
-        return historicRates[index]
+    func itemInfo(for indexPath: IndexPath) -> HistoricRateInfo {
+        return historicRates[indexPath.item]
+    }
+}
+
+extension HistoricViewModel {
+    var chartValues: [Float] {
+        historicRates.map({$0.rate})
+    }
+    
+    var chartLabels: [String] {
+        historicRates.map({$0.date.defaultFormatDate.dateMonthFormatted })        
     }
 }
 
