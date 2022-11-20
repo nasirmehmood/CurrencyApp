@@ -33,6 +33,14 @@ class CurrencyDataStore {
     }
 
     func convert(from: String, to: String, amount: Float) async throws -> FXConvertAPIResponse {
+        if FeatureFlags.debugDataEnabled {
+            let response = FXConvertAPIResponse(date: "2022-11-20",
+                                                info: FXConvertInfo(rate: 23.958447, timestamp: 1668944403),
+                                                query: FXConvertQuery(amount: 1, from: "AED", to: "AFN"),
+                                                result: 23.958447, success: true)
+            return response
+        }
+        
         let params = FXConvertAPIRequest(from: from, to: to, amount: amount)
         let data = try await ServicesManager.shared.performGetRequest(endpoint: APIEndpoint.convert,
                                                                       params: params,
@@ -51,6 +59,17 @@ class CurrencyDataStore {
     }
 
     func getTimeSeries(base: String, symbols: [String], startDate: String, endDate: String) async throws -> FXTimeSeriesAPIResponse {
+        if FeatureFlags.debugDataEnabled {
+            let response = FXTimeSeriesAPIResponse(base: "AED", endDate: "2022-11-20",
+                                                   startDate: "2022-11-18", timeseries: true,
+                                                   success: true, rates: [
+                                                    FXTimeSeriesRates(date: "2022-11-18", symbol: "AFN", rate: 23.958447),
+                                                    FXTimeSeriesRates(date: "2022-11-19", symbol: "AFN", rate: 23.958447),
+                                                    FXTimeSeriesRates(date: "2022-11-20", symbol: "AFN", rate: 23.958447)
+                                                   ])
+            return response
+        }
+        
         let params = FXTimeSeriesAPIRequest(base: base, symbols: symbols, startDate: startDate, endDate: endDate)
         let data = try await ServicesManager.shared.performGetRequest(endpoint: APIEndpoint.timeSeries,
                                                                       params: params,

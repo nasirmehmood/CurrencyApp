@@ -9,4 +9,5 @@ import Foundation
 
 enum FeatureFlags {
     static let logsEnabled = true
+    static let debugDataEnabled = true
 }

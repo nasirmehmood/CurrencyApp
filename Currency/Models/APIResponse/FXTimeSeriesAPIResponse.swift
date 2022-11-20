@@ -21,6 +21,16 @@ struct FXTimeSeriesAPIResponse: Codable {
         case endDate = "end_date"
     }
     
+    init(base: String, endDate: String, startDate: String,
+         timeseries: Bool, success: Bool, rates: [FXTimeSeriesRates]) {
+        self.base = base
+        self.endDate = endDate
+        self.startDate = startDate
+        self.timeseries = timeseries
+        self.success = success
+        self.rates = rates
+    }
+    
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         base = try values.decode(String.self, forKey: .base)
