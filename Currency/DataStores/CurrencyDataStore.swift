@@ -12,7 +12,7 @@ class CurrencyDataStore {
     enum HeaderKeys {
         static let apiKey = "apiKey"
     }
-    static let apiKey = "2JUJtlfYfUfcgH6o2LwY3mzUUOxkTkQc"
+    static let apiKey = "ZsRh8F7AocVa1y9yK9r7Po39lewiY5pE"// "2JUJtlfYfUfcgH6o2LwY3mzUUOxkTkQc"
     static let shared = CurrencyDataStore()
 
     @UserDefaultCodable(key: "symbols") private var symbolsResponse: FXSymbolsAPIResponse?

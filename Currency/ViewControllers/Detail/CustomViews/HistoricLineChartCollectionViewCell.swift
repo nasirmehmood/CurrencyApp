@@ -11,7 +11,7 @@ import Charts
 class HistoricLineChartCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var lineChartView: LineChartView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,10 +29,10 @@ class HistoricLineChartCollectionViewCell: UICollectionViewCell {
             let value = ChartDataEntry(x: Double(10 * i), y: Double(values[i]))
             lineChartDataEntries.append(value)
         }
-        
+
         let lineChartDataSet = LineChartDataSet(entries: lineChartDataEntries)
         lineChartDataSet.colors = [UIColor(named: "AccentColor")!]
-        
+
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartView.data = lineChartData
         lineChartView.chartDescription.text = "Currency History"
