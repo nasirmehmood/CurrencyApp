@@ -53,7 +53,7 @@ struct FXTimeSeriesAPIResponse: Codable {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         rates = timeSeriesRates.sorted { rate1, rate2 in
-            return dateFormatter.date(from: rate1.date)! > dateFormatter.date(from: rate2.date)!
+            return dateFormatter.date(from: rate1.date)! < dateFormatter.date(from: rate2.date)!
         }
     }
 }

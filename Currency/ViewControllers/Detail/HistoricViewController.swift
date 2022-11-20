@@ -24,6 +24,7 @@ class HistoricViewController: UIViewController {
         viewModel = HistoricViewModel(baseCurrency: baseCurrency, targetCurrency: targetCurrency)
         subscribeFetchUpdates()
         viewModel.loadCurrencyHistory()
+        self.title = "\(baseCurrency!) - \(targetCurrency!)"
     }
     
     func updateUI() {

@@ -18,7 +18,6 @@ class HistoricLineChartCollectionViewCell: UICollectionViewCell {
         lineChartView.rightAxis.enabled = false
         lineChartView.xAxis.granularity = 1
         lineChartView.xAxis.granularityEnabled = true
-        lineChartView.xAxis.labelRotationAngle = -25
         lineChartView.xAxis.labelPosition = .bottom
         lineChartView.xAxis.avoidFirstLastClippingEnabled = true
     }
@@ -44,7 +43,11 @@ class HistoricLineChartCollectionViewCell: UICollectionViewCell {
 class XAxisValueFormatter: IndexAxisValueFormatter {
     override func stringForValue(_ value: Double,
                         axis: AxisBase?) -> String {
-        let index = Int(value)
-        return values[index/10]
+        let index = Int(value)/10
+        if index < values.count {
+            return values[index]
+        }
+        
+        return ""
     }
 }
